@@ -13,9 +13,7 @@
 -(UIImage *)image {
     
     //Crear imagen desde NSData
-    
-    return [UIImage imageWithData:self.photoData];
-    
+    return [UIImage imageWithData:self.photoData];    
 }
 
 - (void)setImage:(UIImage *)image {

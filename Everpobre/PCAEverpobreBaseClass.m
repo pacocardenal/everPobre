@@ -41,9 +41,12 @@
     // Alta en notificaciones para las propiedades
     // que quiero observar
     
+    // Opciones para que te pase valor antiguo y nuevo (no nos hace falta) : NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+    
     for (NSString * key in [self observableKeys]) {
-        [self addObserver:self forKeyPath:key
-                  options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+        [self addObserver:self
+               forKeyPath:key
+                  options:0
                   context:NULL];
     }
     
