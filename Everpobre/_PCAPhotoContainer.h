@@ -2,6 +2,7 @@
 // Make changes to PCAPhotoContainer.h instead.
 
 @import CoreData;
+#import "PCAEverpobreBaseClass.h"
 
 extern const struct PCAPhotoContainerAttributes {
 	__unsafe_unretained NSString *photoData;
@@ -16,7 +17,7 @@ extern const struct PCAPhotoContainerRelationships {
 @interface PCAPhotoContainerID : NSManagedObjectID {}
 @end
 
-@interface _PCAPhotoContainer : NSManagedObject {}
+@interface _PCAPhotoContainer : PCAEverpobreBaseClass {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;

@@ -1,25 +1,14 @@
-#import "PCANotebook.h"
+//
+//  PCAEverpobreBaseClass.m
+//  Everpobre
+//
+//  Created by Paco on 3/2/15.
+//  Copyright (c) 2015 Paco Cardenal. All rights reserved.
+//
 
-@interface PCANotebook ()
+#import "PCAEverpobreBaseClass.h"
 
-// Private interface goes here.
-
-@end
-
-@implementation PCANotebook
-
-+(instancetype)notebookWithName:(NSString *)name
-                        context:(NSManagedObjectContext*)context {
-    
-    PCANotebook *nb = [self insertInManagedObjectContext:context];
-    
-    nb.name = name;
-    nb.creationDate = [NSDate date];
-    nb.modificationDate = [NSDate date];
-    
-    return  nb;
-    
-}
+@implementation PCAEverpobreBaseClass
 
 # pragma mark - Lifecycle
 
@@ -42,7 +31,7 @@
 }
 
 -(NSArray *) observableKeys {
-    return @[PCANotebookAttributes.name, PCANotebookRelationships.notes];
+    return nil;
 }
 
 # pragma mark - KVO
@@ -57,7 +46,7 @@
                   options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
                   context:NULL];
     }
-
+    
 }
 
 -(void)tearDownKVO {
@@ -66,16 +55,6 @@
     for (NSString * key in [self observableKeys]) {
         [self removeObserver:self forKeyPath:key];
     }
-}
-
--(void)observeValueForKeyPath:(NSString *)keyPath
-                     ofObject:(id)object
-                       change:(NSDictionary *)change
-                      context:(void *)context {
-    
-    // Solo me interesa saber que algo ha cambiado
-    self.modificationDate = [NSDate date];
-    
 }
 
 @end

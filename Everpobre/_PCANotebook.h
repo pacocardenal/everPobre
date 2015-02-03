@@ -2,6 +2,7 @@
 // Make changes to PCANotebook.h instead.
 
 @import CoreData;
+#import "PCAEverpobreBaseClass.h"
 
 extern const struct PCANotebookAttributes {
 	__unsafe_unretained NSString *creationDate;
@@ -18,7 +19,7 @@ extern const struct PCANotebookRelationships {
 @interface PCANotebookID : NSManagedObjectID {}
 @end
 
-@interface _PCANotebook : NSManagedObject {}
+@interface _PCANotebook : PCAEverpobreBaseClass {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
