@@ -7,9 +7,13 @@
 //
 
 #import "AppDelegate.h"
+#import "AGTCoreDataStack.h"
+#import "PCANotebook.h"
+#import "PCANote.h"
+#import "PCAPhotoContainer.h"
 
 @interface AppDelegate ()
-
+@property (strong, nonatomic) AGTCoreDataStack *stack;
 @end
 
 @implementation AppDelegate
@@ -18,6 +22,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    // Creamos el stack
+    // A partir de esto ya podemos empezar a crear objectos PCANote, PCANotebook...
+    self.stack = [AGTCoreDataStack coreDataStackWithModelName:@"Model"];
+    
+    [self createDummyData];
+    [self trastearConDatos];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -43,6 +55,94 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Utils
+
+- (void)createDummyData {
+    
+    [self.stack zapAllData];
+    
+    PCANotebook *nb = [PCANotebook notebookWithName:@"Ex-novias para el recuerdo"
+                                            context:self.stack.context];
+    
+    [PCANote noteWithName:@"Mariana Dávalos"
+                 notebook:nb
+                  context:self.stack.context];
+    
+    [PCANote noteWithName:@"Camila Dávalos"
+                 notebook:nb
+                  context:self.stack.context];
+    
+    [PCANote noteWithName:@"Pampita"
+                 notebook:nb
+                  context:self.stack.context];
+    
+}
+
+- (void)trastearConDatos {
+    
+    PCANotebook *apps = [PCANotebook notebookWithName:@"Ideas de Apps"
+                                              context:self.stack.context];
+    
+    PCANote *iCachete = [PCANote noteWithName:@"iCachete"
+                                     notebook:apps
+                                      context:self.stack.context];
+    
+    // Comprobar que modificationDate se actualiza
+    NSLog(@"Antes: %@", iCachete.modificationDate);
+    iCachete.text = @"App educativa para reforzar la coordinación motora fina y los reflejos";
+    NSLog(@"Después: %@", iCachete.modificationDate);
+    
+    // Búsqueda
+    NSFetchRequest *r = [NSFetchRequest fetchRequestWithEntityName:[PCANote entityName]];
+    // Carga 20 registros
+    r.fetchBatchSize = 20;
+    // Ordena primero por el nombre y luego por fecha de modificación
+    // caseInsensitiveCompare : no tiene en cuenta mayúsculas y minúsculas
+    r.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:PCANoteAttributes.name
+                                                        ascending:YES
+                                                         selector:@selector(caseInsensitiveCompare:)],
+                          [NSSortDescriptor sortDescriptorWithKey:PCANoteAttributes.modificationDate
+                                                        ascending:NO]];
+    
+    // Indicamos condiciones con lenguaje de predicado
+    r.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", apps];
+    
+    NSError *err = nil;
+    NSArray *res = [self.stack.context executeFetchRequest:r
+                                                     error:&err];
+    
+    if (res == nil) {
+        // Error
+        NSLog(@"Error al buscar: %@", err);
+    } else {
+        NSLog(@"Número de notas: %lu", (unsigned long)[res count]);
+        NSLog(@" las notas: %@", res);
+        
+        // De verdad es un array?
+        // No se debe obligar a cargar todo en memoria (res class). Sólo para ejemplo
+        NSLog(@"Clase: %@", [res class]);
+    }
+    
+    // Borrar
+    [self.stack.context deleteObject:apps]; //Borro la libreta
+    
+    r.predicate = nil;
+    res = [self.stack.context executeFetchRequest:r
+                                            error:&err];
+    
+    if (res ==  nil) {
+        NSLog(@"Error al buscar de nuevo: %@", res);
+    }
+    
+    NSLog(@"Notas existentes: %@", res);
+    
+    // Guardamos
+    [self.stack saveWithErrorBlock:^(NSError *error) {
+        NSLog(@"Error al guardar %@", error);
+    }];
+    
 }
 
 @end
