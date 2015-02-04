@@ -11,6 +11,7 @@
 #import "PCANotebook.h"
 #import "PCANote.h"
 #import "PCAPhotoContainer.h"
+#import "PCANotebooksViewController.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) AGTCoreDataStack *stack;
@@ -27,8 +28,31 @@
     // A partir de esto ya podemos empezar a crear objectos PCANote, PCANotebook...
     self.stack = [AGTCoreDataStack coreDataStackWithModelName:@"Model"];
     
+    // Creamos datos chorras
     [self createDummyData];
-    [self trastearConDatos];
+    
+    // Creamos el conjunto de datos
+    NSFetchRequest *r = [NSFetchRequest fetchRequestWithEntityName:[PCANotebook entityName]];
+    r.fetchBatchSize = 30;
+    r.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:PCANoteAttributes.name
+                                                        ascending:YES
+                                                         selector:@selector(caseInsensitiveCompare:)],
+                          [NSSortDescriptor sortDescriptorWithKey:PCANoteAttributes.modificationDate
+                                                        ascending:NO]];
+    
+    NSFetchedResultsController *fc = [[NSFetchedResultsController alloc]initWithFetchRequest:r
+                                                                        managedObjectContext:self.stack.context sectionNameKeyPath:nil
+                                                                                   cacheName:nil];
+    
+    // Creamos el controlador
+    PCANotebooksViewController *nbVC = [[PCANotebooksViewController alloc] initWithFetchedResultsController:fc
+                                                                                                      style:UITableViewStylePlain];
+    
+    // Lo metemos en un NavigationController
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nbVC];
+    
+    // Lo mostramos
+    self.window.rootViewController = nav;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
