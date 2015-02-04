@@ -176,33 +176,29 @@
         
     }else if (self.context.hasChanges) {
         if (![self.context save:&err]) {
-            errorBlock(err);
+            if (errorBlock != nil) {
+                errorBlock(err);
+            }
         }
     }
     
 }
 
-
-
-
--(void) laPolla{
+-(NSArray *) executeFetchRequest:(NSFetchRequest *)req
+                      errorBlock:(void(^)(NSError *error)) errorBlock {
     
-    // Automagically do light migrations
-    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES,                                         NSInferMappingModelAutomaticallyOption : @YES} ;
+    NSError *err;
+    NSArray *res = [self.context executeFetchRequest:req
+                                               error:&err];
     
+    if (res == nil) {
+        // Error
+        if (errorBlock != nil) {
+            errorBlock(err);
+        }
+    }
+    return res;
     
-    [_storeCoordinator addPersistentStoreWithType:NSSQLiteStoreType
-                                    configuration:nil
-                                              URL:self.dbURL
-                                          options:options
-                                            error:nil ];
-
 }
-
-
-
-
-
-
 
 @end
