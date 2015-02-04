@@ -8,6 +8,8 @@
 
 #import "PCANotebooksViewController.h"
 #import "PCANotebook.h"
+#import "PCANotesViewController.h"
+#import "PCANote.h"
 
 @interface PCANotebooksViewController ()
 
@@ -76,6 +78,37 @@
 - (NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return @"Remove";
+    
+}
+
+#pragma mark - Delegate
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Averiguar cual es la libreta
+    PCANotebook *nb = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Creo la selección de datos
+    NSFetchRequest *r = [NSFetchRequest fetchRequestWithEntityName:[PCANote entityName]];
+    
+    r.fetchBatchSize = 30;
+    r.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:PCANoteAttributes.name
+                                                        ascending:YES
+                                                         selector:@selector(caseInsensitiveCompare:)],
+                          [NSSortDescriptor sortDescriptorWithKey:PCANoteAttributes.modificationDate
+                                                        ascending:NO]];
+    r.predicate = [NSPredicate predicateWithFormat:@"notebook == %@", nb];
+    
+    NSFetchedResultsController *fc = [[NSFetchedResultsController alloc] initWithFetchRequest:r
+                                                                         managedObjectContext:self.fetchedResultsController.managedObjectContext
+                                                                           sectionNameKeyPath:nil cacheName:nil];
+    
+    // Creo una instancia de controlador de notas
+    PCANotesViewController *nVC = [[PCANotesViewController alloc]initWithFetchedResultsController:fc
+                                                                                            style:UITableViewStylePlain];
+    
+    // Lo pusheo
+    [self.navigationController pushViewController:nVC animated:YES];
     
 }
 
