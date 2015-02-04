@@ -12,6 +12,7 @@
 #import "PCANote.h"
 #import "PCAPhotoContainer.h"
 #import "PCANotebooksViewController.h"
+#import "UIViewController+Navigation.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) AGTCoreDataStack *stack;
@@ -48,11 +49,8 @@
     PCANotebooksViewController *nbVC = [[PCANotebooksViewController alloc] initWithFetchedResultsController:fc
                                                                                                       style:UITableViewStylePlain];
     
-    // Lo metemos en un NavigationController
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:nbVC];
-    
     // Lo mostramos
-    self.window.rootViewController = nav;
+    self.window.rootViewController = [nbVC pcaWrappedInNavigation];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
