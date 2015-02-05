@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Paco Cardenal. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
+@class PCANote;
 
 @interface PCANameTableViewCell : UITableViewCell
 
@@ -14,5 +16,7 @@
 
 + (CGFloat)height;
 + (NSString *)cellId;
+
+- (void)observeNote:(PCANote *) note;
 
 @end

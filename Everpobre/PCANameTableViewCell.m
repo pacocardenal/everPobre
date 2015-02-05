@@ -7,6 +7,11 @@
 //
 
 #import "PCANameTableViewCell.h"
+#import "PCANote.h"
+
+@interface PCANameTableViewCell()
+@property (strong, nonatomic) PCANote *note;
+@end
 
 @implementation PCANameTableViewCell
 
@@ -16,6 +21,12 @@
 
 + (NSString *)cellId {
     return [self description];
+}
+
+#pragma - KVO
+
+- (void)observeNote:(PCANote *) note {
+    
 }
 
 - (void)awakeFromNib {

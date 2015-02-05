@@ -6,6 +6,20 @@
 //  Copyright (c) 2015 Paco Cardenal. All rights reserved.
 //
 
+// Constantes
+#define NUMBER_OF_SECTIONS  4
+
+#define NAME_SECTION_HEADER        @"Name"
+#define DATES_SECTION_HEADER       @"Created and last modified"
+#define TEXT_SECTION_HEADER        @"Text"
+#define PHOTO_SECTION_HEADER       @"Photo"
+
+// TO-DO: Create enum
+#define NAME_SECTION        0
+#define DATES_SECTION       1
+#define TEXT_SECTION        2
+#define PHOTO_SECTION       3
+
 #import "PCANoteTableViewController.h"
 #import "PCANote.h"
 #import "PCANameTableViewCell.h"
@@ -43,15 +57,37 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return NUMBER_OF_SECTIONS;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    switch (section) {
+        case NAME_SECTION:
+            return NAME_SECTION_HEADER;
+            break;
+        case DATES_SECTION:
+            return DATES_SECTION_HEADER;
+            break;
+        case TEXT_SECTION:
+            return TEXT_SECTION_HEADER;
+            break;
+        case PHOTO_SECTION:
+            return PHOTO_SECTION_HEADER;
+            break;
+        // Never reaches default
+        default:
+            [NSException raise:@"Section doesn't exist" format:nil];
+            return nil;
+            break;
+    }
+    
 }
 
 /*
