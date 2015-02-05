@@ -7,12 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007774CC1A80D28100828FC8 /* PCAEverpobreBaseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 007774CB1A80D28100828FC8 /* PCAEverpobreBaseClass.m */; };
+		007774CF1A80D6CC00828FC8 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 007774CE1A80D6CC00828FC8 /* AGTCoreDataStack.m */; };
+		00E648641A836E410002FF1A /* PCANotebookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E648621A836E410002FF1A /* PCANotebookTableViewCell.m */; };
+		00E648651A836E410002FF1A /* PCANotebookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E648631A836E410002FF1A /* PCANotebookTableViewCell.xib */; };
+		00EF2C251A821F9E0018877A /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C241A821F9E0018877A /* AGTCoreDataTableViewController.m */; };
+		00EF2C2A1A8220800018877A /* PCANotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C281A8220800018877A /* PCANotebooksViewController.m */; };
+		00EF2C2E1A823DFE0018877A /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C2D1A823DFE0018877A /* UIViewController+Navigation.m */; };
+		00EF2C351A8243DA0018877A /* PCANotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C341A8243DA0018877A /* PCANotesViewController.m */; };
 		00F9813E1A7F916A00FBC205 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F9813D1A7F916A00FBC205 /* main.m */; };
 		00F981411A7F916A00FBC205 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F981401A7F916A00FBC205 /* AppDelegate.m */; };
 		00F981431A7F916A00FBC205 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F981421A7F916A00FBC205 /* Images.xcassets */; };
 		00F981461A7F916A00FBC205 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F981441A7F916A00FBC205 /* LaunchScreen.xib */; };
 		00F981521A7F916A00FBC205 /* EverpobreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F981511A7F916A00FBC205 /* EverpobreTests.m */; };
 		00F9815E1A7F958000FBC205 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00F9815C1A7F958000FBC205 /* Model.xcdatamodeld */; };
+		00F981741A7FAB3000FBC205 /* _PCANote.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F981691A7FAB3000FBC205 /* _PCANote.m */; };
+		00F981751A7FAB3000FBC205 /* _PCANotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F9816B1A7FAB3000FBC205 /* _PCANotebook.m */; };
+		00F981761A7FAB3000FBC205 /* _PCAPhotoContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F9816D1A7FAB3000FBC205 /* _PCAPhotoContainer.m */; };
+		00F981771A7FAB3000FBC205 /* PCANote.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F9816F1A7FAB3000FBC205 /* PCANote.m */; };
+		00F981781A7FAB3000FBC205 /* PCANotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F981711A7FAB3000FBC205 /* PCANotebook.m */; };
+		00F981791A7FAB3000FBC205 /* PCAPhotoContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F981731A7FAB3000FBC205 /* PCAPhotoContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +40,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		007774CA1A80D28100828FC8 /* PCAEverpobreBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAEverpobreBaseClass.h; sourceTree = "<group>"; };
+		007774CB1A80D28100828FC8 /* PCAEverpobreBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAEverpobreBaseClass.m; sourceTree = "<group>"; };
+		007774CD1A80D6CC00828FC8 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
+		007774CE1A80D6CC00828FC8 /* AGTCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataStack.m; sourceTree = "<group>"; };
+		00E648611A836E410002FF1A /* PCANotebookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANotebookTableViewCell.h; sourceTree = "<group>"; };
+		00E648621A836E410002FF1A /* PCANotebookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANotebookTableViewCell.m; sourceTree = "<group>"; };
+		00E648631A836E410002FF1A /* PCANotebookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCANotebookTableViewCell.xib; sourceTree = "<group>"; };
+		00EF2C231A821F9E0018877A /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataTableViewController.h; sourceTree = "<group>"; };
+		00EF2C241A821F9E0018877A /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataTableViewController.m; sourceTree = "<group>"; };
+		00EF2C271A8220800018877A /* PCANotebooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANotebooksViewController.h; sourceTree = "<group>"; };
+		00EF2C281A8220800018877A /* PCANotebooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANotebooksViewController.m; sourceTree = "<group>"; };
+		00EF2C2C1A823DFE0018877A /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
+		00EF2C2D1A823DFE0018877A /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		00EF2C331A8243DA0018877A /* PCANotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANotesViewController.h; sourceTree = "<group>"; };
+		00EF2C341A8243DA0018877A /* PCANotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANotesViewController.m; sourceTree = "<group>"; };
 		00F981381A7F916A00FBC205 /* Everpobre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everpobre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00F9813C1A7F916A00FBC205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F9813D1A7F916A00FBC205 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -37,6 +66,18 @@
 		00F981501A7F916A00FBC205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00F981511A7F916A00FBC205 /* EverpobreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EverpobreTests.m; sourceTree = "<group>"; };
 		00F9815D1A7F958000FBC205 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		00F981681A7FAB3000FBC205 /* _PCANote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PCANote.h; sourceTree = "<group>"; };
+		00F981691A7FAB3000FBC205 /* _PCANote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PCANote.m; sourceTree = "<group>"; };
+		00F9816A1A7FAB3000FBC205 /* _PCANotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PCANotebook.h; sourceTree = "<group>"; };
+		00F9816B1A7FAB3000FBC205 /* _PCANotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PCANotebook.m; sourceTree = "<group>"; };
+		00F9816C1A7FAB3000FBC205 /* _PCAPhotoContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _PCAPhotoContainer.h; sourceTree = "<group>"; };
+		00F9816D1A7FAB3000FBC205 /* _PCAPhotoContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _PCAPhotoContainer.m; sourceTree = "<group>"; };
+		00F9816E1A7FAB3000FBC205 /* PCANote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANote.h; sourceTree = "<group>"; };
+		00F9816F1A7FAB3000FBC205 /* PCANote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANote.m; sourceTree = "<group>"; };
+		00F981701A7FAB3000FBC205 /* PCANotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANotebook.h; sourceTree = "<group>"; };
+		00F981711A7FAB3000FBC205 /* PCANotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANotebook.m; sourceTree = "<group>"; };
+		00F981721A7FAB3000FBC205 /* PCAPhotoContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAPhotoContainer.h; sourceTree = "<group>"; };
+		00F981731A7FAB3000FBC205 /* PCAPhotoContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAPhotoContainer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +98,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E648601A836E1E0002FF1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				00E648611A836E410002FF1A /* PCANotebookTableViewCell.h */,
+				00E648621A836E410002FF1A /* PCANotebookTableViewCell.m */,
+				00E648631A836E410002FF1A /* PCANotebookTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		00EF2C261A821FB50018877A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				00EF2C231A821F9E0018877A /* AGTCoreDataTableViewController.h */,
+				00EF2C241A821F9E0018877A /* AGTCoreDataTableViewController.m */,
+				00EF2C271A8220800018877A /* PCANotebooksViewController.h */,
+				00EF2C281A8220800018877A /* PCANotebooksViewController.m */,
+				00EF2C331A8243DA0018877A /* PCANotesViewController.h */,
+				00EF2C341A8243DA0018877A /* PCANotesViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		00EF2C2F1A823E0F0018877A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				00EF2C2C1A823DFE0018877A /* UIViewController+Navigation.h */,
+				00EF2C2D1A823DFE0018877A /* UIViewController+Navigation.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		00F9812F1A7F916A00FBC205 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +151,9 @@
 		00F9813A1A7F916A00FBC205 /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				00E648601A836E1E0002FF1A /* Views */,
+				00EF2C2F1A823E0F0018877A /* Categories */,
+				00EF2C261A821FB50018877A /* Controllers */,
 				00F9815B1A7F950900FBC205 /* Models */,
 				00F9813F1A7F916A00FBC205 /* AppDelegate.h */,
 				00F981401A7F916A00FBC205 /* AppDelegate.m */,
@@ -117,9 +193,33 @@
 		00F9815B1A7F950900FBC205 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00F9817A1A7FABD700FBC205 /* Machine */,
+				007774CD1A80D6CC00828FC8 /* AGTCoreDataStack.h */,
+				007774CE1A80D6CC00828FC8 /* AGTCoreDataStack.m */,
+				00F9816E1A7FAB3000FBC205 /* PCANote.h */,
+				00F9816F1A7FAB3000FBC205 /* PCANote.m */,
+				00F981701A7FAB3000FBC205 /* PCANotebook.h */,
+				00F981711A7FAB3000FBC205 /* PCANotebook.m */,
+				00F981721A7FAB3000FBC205 /* PCAPhotoContainer.h */,
+				00F981731A7FAB3000FBC205 /* PCAPhotoContainer.m */,
 				00F9815C1A7F958000FBC205 /* Model.xcdatamodeld */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		00F9817A1A7FABD700FBC205 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				00F981681A7FAB3000FBC205 /* _PCANote.h */,
+				00F981691A7FAB3000FBC205 /* _PCANote.m */,
+				00F9816A1A7FAB3000FBC205 /* _PCANotebook.h */,
+				00F9816B1A7FAB3000FBC205 /* _PCANotebook.m */,
+				00F9816C1A7FAB3000FBC205 /* _PCAPhotoContainer.h */,
+				00F9816D1A7FAB3000FBC205 /* _PCAPhotoContainer.m */,
+				007774CA1A80D28100828FC8 /* PCAEverpobreBaseClass.h */,
+				007774CB1A80D28100828FC8 /* PCAEverpobreBaseClass.m */,
+			);
+			name = Machine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +304,7 @@
 			files = (
 				00F981461A7F916A00FBC205 /* LaunchScreen.xib in Resources */,
 				00F981431A7F916A00FBC205 /* Images.xcassets in Resources */,
+				00E648651A836E410002FF1A /* PCANotebookTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,9 +322,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007774CF1A80D6CC00828FC8 /* AGTCoreDataStack.m in Sources */,
+				00F981791A7FAB3000FBC205 /* PCAPhotoContainer.m in Sources */,
+				00EF2C251A821F9E0018877A /* AGTCoreDataTableViewController.m in Sources */,
+				00F981771A7FAB3000FBC205 /* PCANote.m in Sources */,
+				00EF2C351A8243DA0018877A /* PCANotesViewController.m in Sources */,
+				00EF2C2E1A823DFE0018877A /* UIViewController+Navigation.m in Sources */,
 				00F981411A7F916A00FBC205 /* AppDelegate.m in Sources */,
 				00F9813E1A7F916A00FBC205 /* main.m in Sources */,
+				00F981751A7FAB3000FBC205 /* _PCANotebook.m in Sources */,
+				00F981741A7FAB3000FBC205 /* _PCANote.m in Sources */,
+				00F981781A7FAB3000FBC205 /* PCANotebook.m in Sources */,
+				00EF2C2A1A8220800018877A /* PCANotebooksViewController.m in Sources */,
 				00F9815E1A7F958000FBC205 /* Model.xcdatamodeld in Sources */,
+				00E648641A836E410002FF1A /* PCANotebookTableViewCell.m in Sources */,
+				00F981761A7FAB3000FBC205 /* _PCAPhotoContainer.m in Sources */,
+				007774CC1A80D28100828FC8 /* PCAEverpobreBaseClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +520,7 @@
 				00F981571A7F916A00FBC205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00F981581A7F916A00FBC205 /* Build configuration list for PBXNativeTarget "EverpobreTests" */ = {
 			isa = XCConfigurationList;
@@ -414,6 +529,7 @@
 				00F9815A1A7F916A00FBC205 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,7 +7,10 @@
 //
 
 #import "AGTCoreDataTableViewController.h"
+#import "PCANotebook.h"
 
 @interface PCANotesViewController : AGTCoreDataTableViewController
+
+@property (strong, nonatomic) PCANotebook *notebook;
 
 @end

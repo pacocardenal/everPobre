@@ -16,6 +16,23 @@
 
 @implementation PCANotesViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Agregamos botón de añadir notas
+    UIBarButtonItem *b = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNote:)];
+    
+    self.navigationItem.rightBarButtonItem = b;
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.title = self.notebook.name;
+    
+}
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Averiguar la nota
@@ -41,9 +58,22 @@
     
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Averiguamos la celda
+        PCANote *difunto = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        // La eliminamos
+        NSManagedObjectContext *ctxt = self.notebook.managedObjectContext;
+        
+        [ctxt deleteObject:difunto];
+    }
+    
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Remove";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,14 +81,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Actions
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) addNote:(id)sender {
+    
+    [PCANote noteWithName:@"Nueva nota" notebook:self.notebook context:self.notebook.managedObjectContext];
+    
 }
-*/
 
 @end

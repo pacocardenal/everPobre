@@ -10,6 +10,7 @@
 #import "PCANotebook.h"
 #import "PCANotesViewController.h"
 #import "PCANote.h"
+#import "PCANotebookTableViewCell.h"
 
 @interface PCANotebooksViewController ()
 
@@ -27,6 +28,10 @@
                                                                             action:@selector(addNotebook:)];
     
     self.navigationItem.rightBarButtonItem = addBtn;
+    
+    // Registramos el nib de la celda
+    UINib *nib = [UINib nibWithNibName:@"PCANotebookTableViewCell" bundle:[NSBundle mainBundle]];
+    [self.tableView registerNib:nib forCellReuseIdentifier:[PCANotebookTableViewCell cellId]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,16 +45,11 @@
     PCANotebook *nb = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     // Creo una celda
-    static NSString *cellId = @"NotebookId";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle
-                                     reuseIdentifier:cellId];
-    }
+    PCANotebookTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PCANotebookTableViewCell cellId] forIndexPath:indexPath];
     
     // La configuro (sincronizo modelo -> vista)
-    cell.textLabel.text = nb.name;
+    cell.nameView.text = nb.name;
+    cell.notesView.text = [NSString stringWithFormat:@"%lu", nb.notes.count];
     
     NSDateFormatter *fmt = [NSDateFormatter new];
     fmt.dateStyle = NSDateFormatterShortStyle;
@@ -60,6 +60,11 @@
     // La devuelvo
     return cell;
     
+}
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [PCANotebookTableViewCell height];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -106,6 +111,9 @@
     // Creo una instancia de controlador de notas
     PCANotesViewController *nVC = [[PCANotesViewController alloc]initWithFetchedResultsController:fc
                                                                                             style:UITableViewStylePlain];
+    
+    // Le asigno su libreta
+    nVC.notebook = nb;
     
     // Lo pusheo
     [self.navigationController pushViewController:nVC animated:YES];
