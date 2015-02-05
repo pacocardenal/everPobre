@@ -10,10 +10,20 @@
 #import "PCANote.h"
 
 @interface PCANameTableViewCell()
-@property (strong, nonatomic) PCANote *note;
+
 @end
 
 @implementation PCANameTableViewCell
+
+#pragma mark - Properties
+
+-(void)setNote:(PCANote *)note {
+    // Sincronizamos la vista con la nota (del modelo a la vista)
+    self.nameField.text = note.name;
+    
+    // Guardamos la nota
+    _note = note;
+}
 
 + (CGFloat)height {
     return 44.0f;
@@ -23,9 +33,16 @@
     return [self description];
 }
 
-#pragma - KVO
+#pragma mark - Misc
 
-- (void)observeNote:(PCANote *) note {
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    
+    // Cuando desaparezco, me mandan este mensaje para que me resetee
+    // y me prepare para ser reutilizado. Similar al viewWillDisappear
+    
+    // Sincroniza la vista con la nota por si hubo cambios (saco de la vista y meto en el modelo)
+    self.note.name = self.nameField.text;
     
 }
 

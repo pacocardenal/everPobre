@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1I-Ci-mHO">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="NoImageAvailable.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="d1I-Ci-mHO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                     </imageView>
                 </subviews>
@@ -24,4 +24,7 @@
             <point key="canvasLocation" x="188" y="403"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="NoImageAvailable.jpg" width="400" height="400"/>
+    </resources>
 </document>

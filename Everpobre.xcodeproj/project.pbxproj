@@ -20,6 +20,9 @@
 		00E648781A837BF00002FF1A /* PCANameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E648761A837BF00002FF1A /* PCANameTableViewCell.m */; };
 		00E648791A837BF00002FF1A /* PCANameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E648771A837BF00002FF1A /* PCANameTableViewCell.xib */; };
 		00E6487C1A837D800002FF1A /* PCANoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E6487B1A837D800002FF1A /* PCANoteTableViewController.m */; };
+		00E6487E1A83A4A10002FF1A /* NoImageAvailable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 00E6487D1A83A4A10002FF1A /* NoImageAvailable.jpg */; };
+		00E648831A83A7010002FF1A /* PCAPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E648811A83A7010002FF1A /* PCAPhotoViewController.m */; };
+		00E648841A83A7010002FF1A /* PCAPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E648821A83A7010002FF1A /* PCAPhotoViewController.xib */; };
 		00EF2C251A821F9E0018877A /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C241A821F9E0018877A /* AGTCoreDataTableViewController.m */; };
 		00EF2C2A1A8220800018877A /* PCANotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C281A8220800018877A /* PCANotebooksViewController.m */; };
 		00EF2C2E1A823DFE0018877A /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C2D1A823DFE0018877A /* UIViewController+Navigation.m */; };
@@ -70,6 +73,10 @@
 		00E648771A837BF00002FF1A /* PCANameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCANameTableViewCell.xib; sourceTree = "<group>"; };
 		00E6487A1A837D800002FF1A /* PCANoteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANoteTableViewController.h; sourceTree = "<group>"; };
 		00E6487B1A837D800002FF1A /* PCANoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANoteTableViewController.m; sourceTree = "<group>"; };
+		00E6487D1A83A4A10002FF1A /* NoImageAvailable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoImageAvailable.jpg; sourceTree = "<group>"; };
+		00E648801A83A7010002FF1A /* PCAPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAPhotoViewController.h; sourceTree = "<group>"; };
+		00E648811A83A7010002FF1A /* PCAPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAPhotoViewController.m; sourceTree = "<group>"; };
+		00E648821A83A7010002FF1A /* PCAPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCAPhotoViewController.xib; sourceTree = "<group>"; };
 		00EF2C231A821F9E0018877A /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataTableViewController.h; sourceTree = "<group>"; };
 		00EF2C241A821F9E0018877A /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataTableViewController.m; sourceTree = "<group>"; };
 		00EF2C271A8220800018877A /* PCANotebooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANotebooksViewController.h; sourceTree = "<group>"; };
@@ -143,6 +150,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		00E6487F1A83A4A50002FF1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				00E6487D1A83A4A10002FF1A /* NoImageAvailable.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		00EF2C261A821FB50018877A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +169,9 @@
 				00EF2C341A8243DA0018877A /* PCANotesViewController.m */,
 				00E6487A1A837D800002FF1A /* PCANoteTableViewController.h */,
 				00E6487B1A837D800002FF1A /* PCANoteTableViewController.m */,
+				00E648801A83A7010002FF1A /* PCAPhotoViewController.h */,
+				00E648811A83A7010002FF1A /* PCAPhotoViewController.m */,
+				00E648821A83A7010002FF1A /* PCAPhotoViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -188,6 +206,7 @@
 		00F9813A1A7F916A00FBC205 /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				00E6487F1A83A4A50002FF1A /* Resources */,
 				00E648601A836E1E0002FF1A /* Views */,
 				00EF2C2F1A823E0F0018877A /* Categories */,
 				00EF2C261A821FB50018877A /* Controllers */,
@@ -343,7 +362,9 @@
 				00F981461A7F916A00FBC205 /* LaunchScreen.xib in Resources */,
 				00E648741A837AF20002FF1A /* PCADatesTableViewCell.xib in Resources */,
 				00F981431A7F916A00FBC205 /* Images.xcassets in Resources */,
+				00E6487E1A83A4A10002FF1A /* NoImageAvailable.jpg in Resources */,
 				00E648651A836E410002FF1A /* PCANotebookTableViewCell.xib in Resources */,
+				00E648841A83A7010002FF1A /* PCAPhotoViewController.xib in Resources */,
 				00E6486A1A83783C0002FF1A /* PCAPhotoTableViewCell.xib in Resources */,
 				00E648791A837BF00002FF1A /* PCANameTableViewCell.xib in Resources */,
 			);
@@ -363,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E648831A83A7010002FF1A /* PCAPhotoViewController.m in Sources */,
 				007774CF1A80D6CC00828FC8 /* AGTCoreDataStack.m in Sources */,
 				00E6486E1A83794B0002FF1A /* PCATextTableViewCell.m in Sources */,
 				00F981791A7FAB3000FBC205 /* PCAPhotoContainer.m in Sources */,

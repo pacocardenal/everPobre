@@ -26,6 +26,7 @@
 #import "PCATextTableViewCell.h"
 #import "PCADatesTableViewCell.h"
 #import "PCAPhotoTableViewCell.h"
+#import "PCAPhotoViewController.h"
 
 @interface PCANoteTableViewController ()
 
@@ -44,6 +45,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registerNibs];
     
     // Registrar las celdas
     
@@ -90,16 +92,62 @@
     
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
-    return cell;
+    // Averiguamos de qué celda nos habla
+    switch (indexPath.section) {
+        case NAME_SECTION:
+        {
+            PCANameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PCANameTableViewCell cellId] forIndexPath:indexPath];
+            [cell setNote:self.note];
+            return cell;
+            break;
+        }
+        case DATES_SECTION: {
+            PCADatesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PCADatesTableViewCell cellId] forIndexPath:indexPath];
+            [cell setNote:self.note];
+            return cell;
+            break;
+        }
+        case TEXT_SECTION: {
+            PCATextTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PCATextTableViewCell cellId] forIndexPath:indexPath];
+            [cell setNote:self.note];
+            return cell;
+            break;
+        }
+        case PHOTO_SECTION: {
+            PCAPhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[PCAPhotoTableViewCell cellId] forIndexPath:indexPath];
+            [cell setNote:self.note];
+            return cell;
+            break;
+        }
+        default:
+            [NSException raise:@"UnknownSection" format:@"Unknown section %ld",(long)indexPath.section];
+            return nil;
+            break;
+    }
 }
-*/
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (indexPath.section) {
+        case NAME_SECTION:
+            return [PCANameTableViewCell height];
+            break;
+        case DATES_SECTION:
+            return [PCADatesTableViewCell height];
+            break;
+        case TEXT_SECTION:
+            return [PCATextTableViewCell height];
+            break;
+        case PHOTO_SECTION:
+            return [PCAPhotoTableViewCell height];
+        default:
+            return 0;
+            break;
+    }
+    
+}
 - (void) registerNibs {
     
     NSBundle *main = [NSBundle mainBundle];
@@ -115,6 +163,18 @@
     
     UINib *photoNib = [UINib nibWithNibName:@"PCAPhotoTableViewCell" bundle:main];
     [self.tableView registerNib:photoNib forCellReuseIdentifier:[PCAPhotoTableViewCell cellId]];
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == PHOTO_SECTION) {
+        
+        // Mostramos el controlador de fotos
+        PCAPhotoViewController *pVC = [[PCAPhotoViewController alloc]initWithModel:self.note];
+        [self.navigationController pushViewController:pVC animated:YES];
+        
+    }
     
 }
 

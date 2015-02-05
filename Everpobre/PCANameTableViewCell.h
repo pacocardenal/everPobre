@@ -13,10 +13,9 @@
 @interface PCANameTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (strong, nonatomic) PCANote *note;
 
 + (CGFloat)height;
 + (NSString *)cellId;
-
-- (void)observeNote:(PCANote *) note;
 
 @end

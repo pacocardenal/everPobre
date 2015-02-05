@@ -9,6 +9,7 @@
 #import "PCANotesViewController.h"
 #import "PCANote.h"
 #import "PCAPhotoContainer.h"
+#import "PCANoteTableViewController.h"
 
 @interface PCANotesViewController ()
 
@@ -86,6 +87,21 @@
 -(void) addNote:(id)sender {
     
     [PCANote noteWithName:@"Nueva nota" notebook:self.notebook context:self.notebook.managedObjectContext];
+    
+}
+
+#pragma mark - Delegate
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Averiguar la nota
+    PCANote *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    // Crear formulario de nota
+    PCANoteTableViewController *nVC = [[PCANoteTableViewController alloc]initWithModel:note];
+    
+    // Hacer el push
+    [self.navigationController pushViewController:nVC animated:YES];
     
 }
 

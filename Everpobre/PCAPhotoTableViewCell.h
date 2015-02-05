@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PCANote;
 
 @interface PCAPhotoTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (strong, nonatomic) PCANote *note;
 
 + (CGFloat)height;
 + (NSString *)cellId;

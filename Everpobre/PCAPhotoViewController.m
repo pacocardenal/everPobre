@@ -7,18 +7,40 @@
 //
 
 #import "PCAPhotoViewController.h"
+#import "PCANote.h"
+#import "PCAPhotoContainer.h"
 
 @interface PCAPhotoViewController ()
-
+@property (strong, nonatomic) PCANote *model;
 @end
 
 @implementation PCAPhotoViewController
+
+- (id)initWithModel:(PCANote *)model {
+    if (self = [super initWithNibName:nil bundle:nil]) {
+        _model = model;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Sincronizamos movelo y vista
+    self.photoView.image = self.model.photo.image;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    // Sincronizamos vista y modelo
+    self.model.photo.image = self.photoView.image;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -34,4 +56,9 @@
 }
 */
 
+- (IBAction)deletePhoto:(id)sender {
+}
+
+- (IBAction)takePhoto:(id)sender {
+}
 @end
