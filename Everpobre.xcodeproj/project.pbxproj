@@ -11,6 +11,15 @@
 		007774CF1A80D6CC00828FC8 /* AGTCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 007774CE1A80D6CC00828FC8 /* AGTCoreDataStack.m */; };
 		00E648641A836E410002FF1A /* PCANotebookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E648621A836E410002FF1A /* PCANotebookTableViewCell.m */; };
 		00E648651A836E410002FF1A /* PCANotebookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E648631A836E410002FF1A /* PCANotebookTableViewCell.xib */; };
+		00E648691A83783C0002FF1A /* PCAPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E648671A83783C0002FF1A /* PCAPhotoTableViewCell.m */; };
+		00E6486A1A83783C0002FF1A /* PCAPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E648681A83783C0002FF1A /* PCAPhotoTableViewCell.xib */; };
+		00E6486E1A83794B0002FF1A /* PCATextTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E6486C1A83794B0002FF1A /* PCATextTableViewCell.m */; };
+		00E6486F1A83794B0002FF1A /* PCATextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E6486D1A83794B0002FF1A /* PCATextTableViewCell.xib */; };
+		00E648731A837AF20002FF1A /* PCADatesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E648711A837AF20002FF1A /* PCADatesTableViewCell.m */; };
+		00E648741A837AF20002FF1A /* PCADatesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E648721A837AF20002FF1A /* PCADatesTableViewCell.xib */; };
+		00E648781A837BF00002FF1A /* PCANameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E648761A837BF00002FF1A /* PCANameTableViewCell.m */; };
+		00E648791A837BF00002FF1A /* PCANameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E648771A837BF00002FF1A /* PCANameTableViewCell.xib */; };
+		00E6487C1A837D800002FF1A /* PCANoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E6487B1A837D800002FF1A /* PCANoteTableViewController.m */; };
 		00EF2C251A821F9E0018877A /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C241A821F9E0018877A /* AGTCoreDataTableViewController.m */; };
 		00EF2C2A1A8220800018877A /* PCANotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C281A8220800018877A /* PCANotebooksViewController.m */; };
 		00EF2C2E1A823DFE0018877A /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EF2C2D1A823DFE0018877A /* UIViewController+Navigation.m */; };
@@ -47,6 +56,20 @@
 		00E648611A836E410002FF1A /* PCANotebookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANotebookTableViewCell.h; sourceTree = "<group>"; };
 		00E648621A836E410002FF1A /* PCANotebookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANotebookTableViewCell.m; sourceTree = "<group>"; };
 		00E648631A836E410002FF1A /* PCANotebookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCANotebookTableViewCell.xib; sourceTree = "<group>"; };
+		00E648661A83783C0002FF1A /* PCAPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAPhotoTableViewCell.h; sourceTree = "<group>"; };
+		00E648671A83783C0002FF1A /* PCAPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAPhotoTableViewCell.m; sourceTree = "<group>"; };
+		00E648681A83783C0002FF1A /* PCAPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCAPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		00E6486B1A83794B0002FF1A /* PCATextTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCATextTableViewCell.h; sourceTree = "<group>"; };
+		00E6486C1A83794B0002FF1A /* PCATextTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCATextTableViewCell.m; sourceTree = "<group>"; };
+		00E6486D1A83794B0002FF1A /* PCATextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCATextTableViewCell.xib; sourceTree = "<group>"; };
+		00E648701A837AF20002FF1A /* PCADatesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCADatesTableViewCell.h; sourceTree = "<group>"; };
+		00E648711A837AF20002FF1A /* PCADatesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCADatesTableViewCell.m; sourceTree = "<group>"; };
+		00E648721A837AF20002FF1A /* PCADatesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCADatesTableViewCell.xib; sourceTree = "<group>"; };
+		00E648751A837BF00002FF1A /* PCANameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANameTableViewCell.h; sourceTree = "<group>"; };
+		00E648761A837BF00002FF1A /* PCANameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANameTableViewCell.m; sourceTree = "<group>"; };
+		00E648771A837BF00002FF1A /* PCANameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PCANameTableViewCell.xib; sourceTree = "<group>"; };
+		00E6487A1A837D800002FF1A /* PCANoteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANoteTableViewController.h; sourceTree = "<group>"; };
+		00E6487B1A837D800002FF1A /* PCANoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCANoteTableViewController.m; sourceTree = "<group>"; };
 		00EF2C231A821F9E0018877A /* AGTCoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataTableViewController.h; sourceTree = "<group>"; };
 		00EF2C241A821F9E0018877A /* AGTCoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataTableViewController.m; sourceTree = "<group>"; };
 		00EF2C271A8220800018877A /* PCANotebooksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCANotebooksViewController.h; sourceTree = "<group>"; };
@@ -104,6 +127,18 @@
 				00E648611A836E410002FF1A /* PCANotebookTableViewCell.h */,
 				00E648621A836E410002FF1A /* PCANotebookTableViewCell.m */,
 				00E648631A836E410002FF1A /* PCANotebookTableViewCell.xib */,
+				00E648661A83783C0002FF1A /* PCAPhotoTableViewCell.h */,
+				00E648671A83783C0002FF1A /* PCAPhotoTableViewCell.m */,
+				00E648681A83783C0002FF1A /* PCAPhotoTableViewCell.xib */,
+				00E6486B1A83794B0002FF1A /* PCATextTableViewCell.h */,
+				00E6486C1A83794B0002FF1A /* PCATextTableViewCell.m */,
+				00E6486D1A83794B0002FF1A /* PCATextTableViewCell.xib */,
+				00E648701A837AF20002FF1A /* PCADatesTableViewCell.h */,
+				00E648711A837AF20002FF1A /* PCADatesTableViewCell.m */,
+				00E648721A837AF20002FF1A /* PCADatesTableViewCell.xib */,
+				00E648751A837BF00002FF1A /* PCANameTableViewCell.h */,
+				00E648761A837BF00002FF1A /* PCANameTableViewCell.m */,
+				00E648771A837BF00002FF1A /* PCANameTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -117,6 +152,8 @@
 				00EF2C281A8220800018877A /* PCANotebooksViewController.m */,
 				00EF2C331A8243DA0018877A /* PCANotesViewController.h */,
 				00EF2C341A8243DA0018877A /* PCANotesViewController.m */,
+				00E6487A1A837D800002FF1A /* PCANoteTableViewController.h */,
+				00E6487B1A837D800002FF1A /* PCANoteTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -302,9 +339,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E6486F1A83794B0002FF1A /* PCATextTableViewCell.xib in Resources */,
 				00F981461A7F916A00FBC205 /* LaunchScreen.xib in Resources */,
+				00E648741A837AF20002FF1A /* PCADatesTableViewCell.xib in Resources */,
 				00F981431A7F916A00FBC205 /* Images.xcassets in Resources */,
 				00E648651A836E410002FF1A /* PCANotebookTableViewCell.xib in Resources */,
+				00E6486A1A83783C0002FF1A /* PCAPhotoTableViewCell.xib in Resources */,
+				00E648791A837BF00002FF1A /* PCANameTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +364,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				007774CF1A80D6CC00828FC8 /* AGTCoreDataStack.m in Sources */,
+				00E6486E1A83794B0002FF1A /* PCATextTableViewCell.m in Sources */,
 				00F981791A7FAB3000FBC205 /* PCAPhotoContainer.m in Sources */,
+				00E648731A837AF20002FF1A /* PCADatesTableViewCell.m in Sources */,
 				00EF2C251A821F9E0018877A /* AGTCoreDataTableViewController.m in Sources */,
 				00F981771A7FAB3000FBC205 /* PCANote.m in Sources */,
 				00EF2C351A8243DA0018877A /* PCANotesViewController.m in Sources */,
@@ -333,11 +376,14 @@
 				00F981751A7FAB3000FBC205 /* _PCANotebook.m in Sources */,
 				00F981741A7FAB3000FBC205 /* _PCANote.m in Sources */,
 				00F981781A7FAB3000FBC205 /* PCANotebook.m in Sources */,
+				00E648781A837BF00002FF1A /* PCANameTableViewCell.m in Sources */,
 				00EF2C2A1A8220800018877A /* PCANotebooksViewController.m in Sources */,
 				00F9815E1A7F958000FBC205 /* Model.xcdatamodeld in Sources */,
 				00E648641A836E410002FF1A /* PCANotebookTableViewCell.m in Sources */,
+				00E648691A83783C0002FF1A /* PCAPhotoTableViewCell.m in Sources */,
 				00F981761A7FAB3000FBC205 /* _PCAPhotoContainer.m in Sources */,
 				007774CC1A80D28100828FC8 /* PCAEverpobreBaseClass.m in Sources */,
+				00E6487C1A837D800002FF1A /* PCANoteTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
