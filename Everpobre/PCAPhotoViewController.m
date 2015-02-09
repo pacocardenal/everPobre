@@ -58,11 +58,46 @@
 
 - (IBAction)deletePhoto:(id)sender {
     
-    // Quitar la foto del modelo
-    self.model.photo.image = nil;
+    // Cargamos los valores anteriores para devolver la vista a su estado
+    CGRect oldRect = self.photoView.bounds;
     
-    // Quitar la foto de la vista
-    self.photoView.image = nil;
+    // Animación
+    [UIView animateWithDuration:0.8
+                          delay:0
+                        options:0
+                     animations:^{
+                         
+                         // Estado final (se va a animar)
+                         self.photoView.bounds = CGRectZero;
+                         self.photoView.alpha = 0;
+                         
+                     } completion:^(BOOL finished) {
+                         
+                         // Quitar la foto del modelo
+                         self.model.photo.image = nil;
+                         
+                         // Quitar la foto de la vista
+                         self.photoView.image = nil;
+                         
+                         // Dejamos la vista como estaba
+                         self.photoView.bounds = oldRect;
+                         self.photoView.alpha = 1.0;
+                         
+                     }];
+    
+    [UIView animateWithDuration:0.8
+                          delay:0
+         usingSpringWithDamping:0.8
+          initialSpringVelocity:1.0
+                        options:0
+                     animations:^{
+                         // Transfomada afín
+                         self.photoView.transform = CGAffineTransformMakeRotation(M_PI_2);
+                     } completion:^(BOOL finished) {
+                         self.photoView.transform = CGAffineTransformIdentity;
+                     }];
+    
+    
 }
 
 - (IBAction)takePhoto:(id)sender {
