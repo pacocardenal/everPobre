@@ -178,4 +178,11 @@
     
 }
 
+/*
+ AGTNameTableViewCell: No puede haber una nota sin nombre.
+ Valida (usando el UITextFieldDelegate) que el usuario ha escrito algo.
+ En caso contrario, mírate UIAlertViewController y muéstrale una alerta llamándole la atención
+ */
+
+
 @end

@@ -9,7 +9,8 @@
 @import UIKit;
 @class PCANote;
 
-@interface PCAPhotoViewController : UIViewController
+@interface PCAPhotoViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
 
 - (IBAction)deletePhoto:(id)sender;

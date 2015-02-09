@@ -57,8 +57,48 @@
 */
 
 - (IBAction)deletePhoto:(id)sender {
+    
+    // Quitar la foto del modelo
+    self.model.photo.image = nil;
+    
+    // Quitar la foto de la vista
+    self.photoView.image = nil;
 }
 
 - (IBAction)takePhoto:(id)sender {
+    
+    // Crear un picker
+    UIImagePickerController *picker = [UIImagePickerController new];
+    
+    // Configurar
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        // Tenemos cámara
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        // Nos conformamos con el carrete
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    picker.delegate = self;
+    // Cambiamos la transición de presentación de la cámara (o álbum)
+    picker.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    // Presentar
+    [self presentViewController:picker animated:YES completion:^{
+        // Nos ahorramos el protocolo delegado cuando termina de presentarse
+        NSLog(@"Terminé de cargar");
+    }];
 }
+
+#pragma mark - UIImagePickerControllerDelegate
+                              
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    // Ojo, pico de memoria
+    self.model.photo.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Ocultar el picker
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 @end
