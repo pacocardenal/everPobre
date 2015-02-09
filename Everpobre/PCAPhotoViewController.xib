@@ -24,6 +24,12 @@
                                 <action selector="takePhoto:" destination="-1" id="rVs-xA-KGs"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="hCv-Lf-EG8"/>
+                        <barButtonItem title="Vintage" id="V4u-3f-SUn">
+                            <connections>
+                                <action selector="vintagify:" destination="-1" id="22K-c6-RC6"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="esb-cY-deI"/>
                         <barButtonItem systemItem="trash" id="mk8-YR-feX">
                             <connections>

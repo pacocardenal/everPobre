@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Paco Cardenal. All rights reserved.
 //
 
+@import CoreImage;
+
 #import "PCAPhotoViewController.h"
 #import "PCANote.h"
 #import "PCAPhotoContainer.h"
@@ -122,6 +124,46 @@
         // Nos ahorramos el protocolo delegado cuando termina de presentarse
         NSLog(@"Terminé de cargar");
     }];
+}
+
+- (IBAction)vintagify:(id)sender {
+    
+    // Creamos un contexto
+    CIContext *context = [CIContext contextWithOptions:nil];
+    
+    // Obtenemos la imagen original
+    CIImage *original = [CIImage imageWithCGImage:self.model.photo.image.CGImage];
+    
+    // Creamos y configuramos el filtro
+    CIFilter *falseColor = [CIFilter filterWithName:@"CIFalseColor"];
+    [falseColor setDefaults];
+    [falseColor setValue:original forKey:@"InputImage"];
+    
+    // Obtengo la imagen de salida
+    CIImage *output = falseColor.outputImage;
+    
+    // Creamos el filtro de viñeta
+    CIFilter *vignette = [CIFilter filterWithName:@"CIVignette"];
+    [vignette setDefaults];
+    [vignette setValue:@8 forKey:@"InputIntensity"];
+    
+    // Los encadenamos
+    [vignette setValue:output forKey:@"InputImage"];
+    
+    output = vignette.outputImage;
+    
+    // Aplicamos el filtro
+    CGImageRef final = [context createCGImage:output fromRect:[output extent]];
+    
+    // Obtengo la imagen en forma de UIImage
+    UIImage *finalImg = [UIImage imageWithCGImage:final];
+    
+    // Liberamos recursos
+    CGImageRelease(final);
+    
+    // Incluimos en UIImageView
+    self.photoView.image = finalImg;
+    self.model.photo.image = finalImg;
 }
 
 #pragma mark - UIImagePickerControllerDelegate

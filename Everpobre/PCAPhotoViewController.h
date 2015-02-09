@@ -16,5 +16,6 @@
 - (IBAction)deletePhoto:(id)sender;
 - (IBAction)takePhoto:(id)sender;
 - (id)initWithModel:(PCANote *)model;
+- (IBAction)vintagify:(id)sender;
 
 @end
