@@ -11,6 +11,8 @@
 #import "PCAPhotoViewController.h"
 #import "PCANote.h"
 #import "PCAPhotoContainer.h"
+#import "PCAPhotoContainer.h"
+#import "UIImage+Resize.h"
 
 @interface PCAPhotoViewController ()
 @property (strong, nonatomic) PCANote *model;
@@ -171,7 +173,19 @@
 -(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     // Ojo, pico de memoria
-    self.model.photo.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *img = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Reducimos la imagen para que tenga el tamaño de la pantalla
+    // TO-DO : if para diferenciar cámara y carrete
+    
+    // Reducimos la imagen para que tenga la mitad del tamaño original.
+    // Lo correcto sería que coinicda con el tamaño de la pantalla, pero habría que calcular la escala
+    CGSize newSize = CGSizeMake(img.size.width * 0.5, img.size.height * 0.5);
+    // Este método, con imágenes grandes y máxima calidad va a tardar un poco.
+    // Lo ideal sería pasarlo a segundo plano con GCD.
+    img = [img resizedImage:newSize interpolationQuality:kCGInterpolationHigh];
+    
+    self.model.photo.image = img;
     
     // Ocultar el picker
     [self dismissViewControllerAnimated:YES completion:nil];
