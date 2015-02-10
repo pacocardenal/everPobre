@@ -13,6 +13,7 @@
 #import "PCAPhotoContainer.h"
 #import "PCANotebooksViewController.h"
 #import "UIViewController+Navigation.h"
+#import "Settings.h"
 
 @interface AppDelegate ()
 @property (strong, nonatomic) AGTCoreDataStack *stack;
@@ -48,6 +49,9 @@
     // Creamos el controlador
     PCANotebooksViewController *nbVC = [[PCANotebooksViewController alloc] initWithFetchedResultsController:fc
                                                                                                       style:UITableViewStylePlain];
+    
+    // Arrancamos el autoguardado
+    [self autoSave];
     
     // Lo mostramos
     self.window.rootViewController = [nbVC pcaWrappedInNavigation];
@@ -171,6 +175,23 @@
         NSLog(@"Error al guardar %@", error);
     }];
     
+}
+
+#pragma mark - Autosave
+-(void) autoSave {
+    
+    if (AUTO_SAVE) {
+        NSLog(@"Auto guardando");
+        
+        [self.stack saveWithErrorBlock:^(NSError *error) {
+            NSLog(@"Error al auto guardar %@", error);
+        }];
+        
+        // Autoguardar cada 5 segundos
+        [self performSelector:@selector(autoSave)
+                   withObject:nil
+                   afterDelay:AUTO_SAVE_DELAY];
+    }
 }
 
 @end

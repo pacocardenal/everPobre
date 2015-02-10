@@ -52,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		003DE63E1A8A0AE8003D3BBE /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		007774CA1A80D28100828FC8 /* PCAEverpobreBaseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAEverpobreBaseClass.h; sourceTree = "<group>"; };
 		007774CB1A80D28100828FC8 /* PCAEverpobreBaseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAEverpobreBaseClass.m; sourceTree = "<group>"; };
 		007774CD1A80D6CC00828FC8 /* AGTCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataStack.h; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 				00F981421A7F916A00FBC205 /* Images.xcassets */,
 				00F981441A7F916A00FBC205 /* LaunchScreen.xib */,
 				00F9813B1A7F916A00FBC205 /* Supporting Files */,
+				003DE63E1A8A0AE8003D3BBE /* Settings.h */,
 			);
 			path = Everpobre;
 			sourceTree = "<group>";
