@@ -35,6 +35,15 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    // Desactivamos opción por defecto de ocupar toda la pantalla (iOS 7)
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    // Añado un borde
+    self.photoView.layer.borderWidth = 3;
+    self.photoView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.photoView.layer.cornerRadius = self.photoView.bounds.size.height / 2;
+    self.photoView.clipsToBounds = YES;
+    
     // Sincronizamos movelo y vista
     self.photoView.image = self.model.photo.image;
 }
