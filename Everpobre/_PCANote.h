@@ -12,10 +12,12 @@ extern const struct PCANoteAttributes {
 } PCANoteAttributes;
 
 extern const struct PCANoteRelationships {
+	__unsafe_unretained NSString *locations;
 	__unsafe_unretained NSString *notebook;
 	__unsafe_unretained NSString *photo;
 } PCANoteRelationships;
 
+@class PCALocation;
 @class PCANotebook;
 @class PCAPhotoContainer;
 
@@ -44,6 +46,10 @@ extern const struct PCANoteRelationships {
 
 //- (BOOL)validateText:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) PCALocation *locations;
+
+//- (BOOL)validateLocations:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) PCANotebook *notebook;
 
 //- (BOOL)validateNotebook:(id*)value_ error:(NSError**)error_;
@@ -67,6 +73,9 @@ extern const struct PCANoteRelationships {
 
 - (NSString*)primitiveText;
 - (void)setPrimitiveText:(NSString*)value;
+
+- (PCALocation*)primitiveLocations;
+- (void)setPrimitiveLocations:(PCALocation*)value;
 
 - (PCANotebook*)primitiveNotebook;
 - (void)setPrimitiveNotebook:(PCANotebook*)value;

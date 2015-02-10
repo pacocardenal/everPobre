@@ -11,6 +11,7 @@ const struct PCANoteAttributes PCANoteAttributes = {
 };
 
 const struct PCANoteRelationships PCANoteRelationships = {
+	.locations = @"locations",
 	.notebook = @"notebook",
 	.photo = @"photo",
 };
@@ -51,6 +52,8 @@ const struct PCANoteRelationships PCANoteRelationships = {
 @dynamic name;
 
 @dynamic text;
+
+@dynamic locations;
 
 @dynamic notebook;
 
